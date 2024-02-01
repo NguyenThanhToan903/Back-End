@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+    </style>
+    <table>
+      <thead>
+        <tr>
+          <th>Hàng 1 Cột 1</th>
+          <th>Hàng 1 Cột 2</th>
+          <th>Hàng 1 Cột 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hàng 2 Cột 1</td>
+          <td>Hàng 2 Cột 2</td>
+          <td>Hàng 2 Cột 3</td>
+        </tr>
+        <tr>
+          <td>Hàng 3 Cột 1</td>
+          <td>Hàng 3 Cột 2</td>
+          <td>Hàng 3 Cột 3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>===========</p>
+    <ol>
+      <li>
+        Mục 1
+        <ul>
+          <li>Mục 1</li>
+          <li>Mục 2</li>
+          <li>Mục 3</li>
+        </ul>
+      </li>
+      <li>Mục 2</li>
+      <li>Mục 3</li>
+    </ol>
+    <p>============</p>
+    <!-- Form -->
+    <form
+      action="https://www.w3schools.com/action_page.php"
+      target="_blank"
+      method="post"
+    >
+      <label for="fullName">Họ Tên:</label>
+      <br />
+      <input type="text" id="fullName" name="full_name" />
+      <br />
+      <label for="email">Email</label>
+      <br />
+      <input type="email" id="email" name="email" />
+      <br />
+      <label for="colors">Chọn màu sắc:</label>
+      <br />
+      <select name="color" id="colors" multiple>
+        <option value="yellow">Vàng</option>
+        <option value="red">Đỏ</option>
+        <option value="green">Xanh</option>
+        <option value="black">Đen</option>
+      </select>
+      <input type="submit" value="Gửi" />
+    </form>
+    <p>============</p>
+  </body>
+</html>
