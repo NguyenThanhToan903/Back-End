@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      window.onload = () => {
+        const listLi = document.querySelectorAll("#menu li");
+        console.log(listLi);
+      };
+    </script>
+
+    <button id="button-menu">Menu</button>
+    <br />
+    <ul id="menu" class="menu">
+      <li>Mục 1</li>
+      <li>Mục 2</li>
+      <li>Mục 3</li>
+    </ul>
+    <br />
+    <input id="fullname" type="text" />
+    <br /><br />
+
+    <label for="phone">Số điện thoại</label>
+    <br />
+    <input id="phone" type="text" />
+    <!-- onchange -->
+    <br />
+    <br />
+    <select name="status" id="status">
+      <option value="all">Tất cả</option>
+      <option value="initial">Chờ kích hoạt</option>
+      <option value="active">Đang hoạt động</option>
+      <option value="inactive">Dừng hoạt động</option>
+    </select>
+    <br />
+    <br />
+    <button id="btClickme">Click me!</button>
+
+    <!-- ===== -->
+
+    <!-- ============SCRIPT============== -->
+    <script>
+      const inputFullname = document.querySelector("#fullname");
+      inputFullname.onblur = (event) => {
+        console.log(event.target.value);
+        event.target.value = event.target.value.toUpperCase();
+        event.target.style.background = "";
+      };
+
+      inputFullname.onfocus = (event) => {
+        console.log(event);
+        event.target.style.background = "#f5c";
+      };
+
+      // inputFullname.onkeydown = (event) => {
+      //   console.log(event.key);
+      //   alert(event.key);
+      // };
+
+      // inputFullname.onkeyup = (event) => {
+      //   console.log(event.key);
+      //   alert(event.key);
+      // };
+
+      // ==== phone ====
+
+      // regex number phone Viet Nam
+      function isVietnamesePhoneNumber(number) {
+        return /([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/.test(number);
+      }
+
+      const inputPhone = document.querySelector("#phone");
+      inputPhone.onblur = (event) => {
+        const phone = event.target.value;
+
+        const checkPhone = isVietnamesePhoneNumber(phone);
+        console.log(checkPhone);
+        if (checkPhone != true) {
+          alert("Vui long nhap dung so dien thoai");
+        }
+      };
+
+      // onclick
+      const buttonMenu = document.querySelector("#button-menu");
+      const menu = document.querySelector("#menu");
+
+      buttonMenu.onclick = () => {
+        menu.classList.toggle("show");
+      };
+
+      // onchange
+      const selectStatus = document.querySelector("#status");
+      selectStatus.onchange = (event) => {
+        const selected = event.target.value;
+
+        switch (selected) {
+          case "all":
+            console.log("Tat ca danh sach");
+            break;
+          case "initial":
+            console.log("Danh sach dang cho kich hoat");
+            break;
+          case "active":
+            console.log("Danh sach dang hoat dong");
+            break;
+          case "inactive":
+            console.log("Danh sach dung hoat dong");
+            break;
+        }
+      };
+
+      const ham1 = () => {
+        console.log("Cong viec 1");
+      };
+      const ham2 = () => {
+        console.log("Cong viec 2");
+      };
+      const button = document.querySelector("#btClickme");
+
+      // button.onclick = () => {
+      //   ham1();
+      // };
+      // button.onclick = () => {
+      //   ham2();
+      // };
+      button.addEventListener("click", () => {
+        ham1();
+      });
+      button.addEventListener("click", () => {
+        ham2();
+      });
+    </script>
+
+    <!-- DOM Naviration -->
+
+    <script>
+      const ads = document.createElement("div");
+      ads.innerHTML = "This is advertisement!";
+      // const text = document.createTextNode("This is advertisement brrr..");
+      // ads.appendChild(text);
+      const body = document.querySelector("body");
+      body.appendChild(ads);
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
