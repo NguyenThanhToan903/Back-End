@@ -147,6 +147,19 @@
       body.appendChild(ads);
     </script>
 
+    <script>
+      const menuReplace = document.querySelector("#menu");
+      const listLi = document.querySelectorAll("#menu li");
+      console.log(listLi);
+      listLi.forEach((li) => {
+        li.addEventListener("click", () => {
+          const newLi = document.createElement("li");
+          newLi.innerHTML = "This is new tag li!!";
+
+          menu.replaceChild(newLi, li);
+        });
+      });
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
