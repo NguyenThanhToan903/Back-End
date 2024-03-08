@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
   res.render("index.pug", { title: "Hey", massage: "Hello there!" });
 });
 
+app.get("/about", { title: "About", massage: "This is page about" });
 app.listen(port, () => {
   console.log(`Example app listening on port  ${port}`);
 });
